@@ -1,6 +1,7 @@
 const admin = require("firebase-admin");
 
 exports.push = async function (req, res) {
+  const condition = "'allDevices' in topics && !('dismissNoti' in topics)";
   const message = {
     notification: {
       title: "title",
@@ -9,7 +10,7 @@ exports.push = async function (req, res) {
     data: {
       link: "https://dev.intelz.kr/home/collection",
     },
-    topic: "allDevices",
+    condition: condition,
   };
 
   admin

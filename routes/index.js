@@ -8,6 +8,6 @@ router.get("/", function (req, res, next) {
 });
 
 router.use("/push", controller.pushController.push);
-router.use("/pushToken", controller.pushTokenController.pushToken);
+router.use("/pushToken/:isRegister/:topic/:token", controller.pushTokenController.pushToken);
 
 module.exports = router;
